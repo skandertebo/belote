@@ -21,6 +21,7 @@ self.addEventListener('install', function(e) {
 
 // cache first strategy
 self.addEventListener('fetch', function(event) {
+    // respond with cache
     event.respondWith(
         caches.match(event.request).then(function(response) {
         // Cache hit - return response

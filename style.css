@@ -6,7 +6,7 @@
 body{
     background-color: #008866;
     font-family: 'Poppins', sans-serif;
-    padding:4em 0;
+    padding:3em 0;
 }
 .container{
     width:100%;
@@ -70,4 +70,18 @@ body{
     display:flex;
     flex-direction: column;
     gap:0.2em;
+}
+.actions{
+    display: flex;
+    gap: 1em;
+}
+.actions button{
+    padding: 0.3em 0.5em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #cceecc;
+    box-shadow: 0 0 5px black;
 }

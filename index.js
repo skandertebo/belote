@@ -10,8 +10,11 @@ if('serviceWorker' in navigator){
     });
 }
 
-let n = 0 , v = 0;
+
+
+let n = parseInt(localStorage.getItem('n')) || 0 , v = parseInt(localStorage.getItem('v')) || 0;
 let pendingVScore, pendingNScore;
+let prevVScore = null, prevNScore = null;
 
 renderScore(n,v);
 
@@ -96,6 +99,8 @@ document.getElementById('score-v').addEventListener('input', function(event){
 
 document.getElementById('add-score-v').addEventListener('click', function(event){
     if(pendingVScore){
+        prevNScore = n;
+        prevVScore = v;
         v += parseInt(pendingVScore);
         if(!document.getElementById('score-v').disabled){
             if(document.getElementById('v-case').value==="case"){
@@ -115,6 +120,9 @@ document.getElementById('add-score-v').addEventListener('click', function(event)
         if(document.getElementById('belote-v').checked){
             v += 20;
         }
+
+        localStorage.setItem('v', v);
+        localStorage.setItem('n', n);
         renderScore(n,v);
         //uncheck all v
         document.querySelectorAll('input[id^=v]').forEach(function(e){
@@ -123,12 +131,16 @@ document.getElementById('add-score-v').addEventListener('click', function(event)
         //empty number input for v
         document.getElementById('score-v').value = '';
         document.getElementById('score-v').disabled = false;
+
+        document.getElementById('undo').disabled = false;
     }
 });
 
 
 document.getElementById('add-score-n').addEventListener('click', function(event){
     if(pendingNScore){
+        prevVScore = v;
+        prevNScore = n;
         n += parseInt(pendingNScore);
         if(!document.getElementById('score-n').disabled){
             if(document.getElementById('n-case').value==="case"){
@@ -148,6 +160,8 @@ document.getElementById('add-score-n').addEventListener('click', function(event)
         if(document.getElementById('belote-n').checked){
             n += 20;
         }
+        localStorage.setItem('n', n);
+        localStorage.setItem('v', v);
         renderScore(n,v);
         //uncheck all n
         document.querySelectorAll('input[id^=n]').forEach(function(e){
@@ -156,7 +170,36 @@ document.getElementById('add-score-n').addEventListener('click', function(event)
         //empty number input for n
         document.getElementById('score-n').value = '';
         document.getElementById('score-n').disabled = false;
+
+        document.getElementById('undo').disabled = false;
     }
+});
+
+document.getElementById('undo').disabled = true;
+
+document.getElementById('undo').addEventListener('click', function(event){
+    if(prevNScore !== null && prevVScore !== null){
+        n = prevNScore;
+        v = prevVScore;
+        localStorage.setItem('n', n);
+        localStorage.setItem('v', v);
+        renderScore(n,v);
+    }
+    event.target.disabled = true;	
+});
+
+document.getElementById('reset').addEventListener('click', function(event){
+    if(n==0 && v==0){
+        return;
+    }
+    prevNScore = n;
+    prevVScore = v;
+    n = 0;
+    v = 0;
+    localStorage.setItem('n', n);
+    localStorage.setItem('v', v);
+    renderScore(n,v);
+    document.getElementById('undo').disabled = false;
 });
 
 function renderScore(n,v){
