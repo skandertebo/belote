@@ -1,0 +1,14 @@
+{
+    "name": "belote",
+    "version": "1.0.0",
+    "description": "Belote game",
+    "display": "standalone",
+    "start_url": "./",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "225x225",
+            "type": "image/png"
+        }
+    ]
+}

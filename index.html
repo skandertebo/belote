@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belote</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header><h1>Belote</h1></header>
+        <div class="main">
+            <div class="team n" id="n">
+                <h2>N</h2>
+                <span id="display-n-score"></span>
+                <div class="add-score">
+                    <div class="add-number">
+                        <input type="number" id="score-n">
+                        <select id="n-case">
+                            <option value="case">Case</option>
+                            <option value="libre">Libre</option>
+                        </select>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="n-contre">
+                            <label for="n-contre">Contré</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="n-surcontre">
+                            <label for="n-surcontre">Sur Contré</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="n-capot">
+                            <label for="n-capot">Capot</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="n-dedans">
+                            <label for="n-dedans">Dedans</label>
+                        </div>
+                    </div>
+                    <div class="belote">
+                        <input type="checkbox" id="belote-n">
+                        <label for="belote-n">Belote</label>
+                    </div>
+                    <button id="add-score-n">Add</button>
+                </div>
+            </div>
+            <div class="team v" id="v">
+                <h2>V</h2>
+                <span id="display-v-score"></span>
+                <div class="add-score">
+                    <div class="add-number">
+                        <input type="number" id="score-v">
+                        <select id="v-case">
+                            <option value="case">Case</option>
+                            <option value="libre">Libre</option>
+                        </select>
+                    </div>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="v-contre">
+                            <label for="v-contre">Contré</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="v-surcontre">
+                            <label for="v-surcontre">Sur Contré</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="v-capot">
+                            <label for="v-capot">Capot</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="v-dedans">
+                            <label for="v-dedans">Dedans</label>
+                        </div>
+                    </div>
+                    <div class="belote">
+                        <input type="checkbox" id="belote-v">
+                        <label for="belote-v">Belote</label>
+                    </div>
+                    <button id="add-score-v">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="index.js"></script>
+</body>
+</html>

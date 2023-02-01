@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #008866;
+    font-family: 'Poppins', sans-serif;
+    padding:4em 0;
+}
+.container{
+    width:100%;
+    max-width:800px;
+    margin:0 auto;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+.main{
+    display: flex;
+    gap: 3em;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.add-score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6em;
+}
+.add-score input[type="number"]{
+    max-width: 100px;
+    padding: 0.3em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2em;
+    text-align: center;
+}
+.add-score button{
+    padding: 0.3em 0.5em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #cceecc;
+    box-shadow: 0 0 5px black;
+}
+.add-number{
+    display: flex;
+    flex-direction: column;
+}
+.add-number select{
+    margin-top: 0.2em;
+    max-width: 60px;
+    padding: 0.3em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
+.options{
+    display:flex;
+    flex-direction: column;
+    gap:0.2em;
+}
