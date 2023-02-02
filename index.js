@@ -63,6 +63,9 @@ document.querySelectorAll('input[type=checkbox]').forEach(function(e){
                 case 'capot':
                     pendingScore = 500;
                     break;
+                case 'capotarabe':
+                    pendingScore = 250
+                    break;
                 case 'dedans':
                     pendingScore = 160;
                     break;
